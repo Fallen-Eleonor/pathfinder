@@ -43,3 +43,5 @@ void mx_print_path(t_part_path path[], char *last_element, int total_distance) {
     mx_printchar('\n');
     mx_printstr("========================================\n");
 }
+
+

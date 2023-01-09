@@ -7,7 +7,7 @@
 #include <stdbool.h>
 #include <malloc/malloc.h>
 
-// Act: Utils pack
+
 void mx_printchar(char c);
 void mx_print_unicode(wchar_t c);
 void mx_printstr(const char *s);
@@ -22,7 +22,6 @@ int mx_quicksort(char **arr, int left, int right);
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
 
-// Act: String pack
 int mx_strlen(const char *s);
 void mx_swap_char(char *s1, char *s2);
 void mx_str_reverse(char *s);
@@ -33,39 +32,37 @@ char *mx_strdup(const char *s1);
 char *mx_strndup(const char *s1, size_t n);
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strncpy(char *dst, const char *src, int len);
-int mx_strcmp(const char *s1, const char *s2);
-int mx_strncmp(const char *s1, const char *s2, int n);
-char *mx_strcat(char *restricts1, const char *restricts2);
-char *mx_strstr(const char *haystack, const char *needle);
-int mx_get_substr_index(const char *str, const char *sub);
-int mx_count_substr(const char *str, const char *sub);
-int mx_count_words(const char *str, char delimiter);
 char *mx_strnew(const int size);
 char *mx_strtrim(const char *str);
-bool mx_isspace(int c);
 char *mx_del_extra_spaces(const char *str);
 char **mx_strsplit(char const *s, char c);
 char *mx_strjoin(const char *s1, const char *s2);
 char *mx_file_to_str(const char *filename);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
-// int mx_read_line(char**lineptr, size_tbuf_size, chardelim, constintfd);
+char *mx_strcat(char *restricts1, const char *restricts2);
+char *mx_strstr(const char *haystack, const char *needle);
+int mx_strcmp(const char *s1, const char *s2);
+int mx_strncmp(const char *s1, const char *s2, int n);
+int mx_get_substr_index(const char *str, const char *sub);
+int mx_count_substr(const char *str, const char *sub);
+int mx_count_words(const char *str, char delimiter);
+bool mx_isspace(int c);
 
-// Act: Memory pack
+
 void *mx_memset(void *b, int c, size_t len);
-// void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
-// void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
 int mx_memcmp(const void *s1, const void *s2, size_t n);
 void *mx_memchr(const void *s, int c, size_t n);
 void *mx_memrchr(const void *s, int c, size_t n);
 void *mx_memmove(void *dst, const void *src, size_t len);
 void *mx_realloc(void *ptr, size_t new_size);
 
-//Act: List pack
+
 typedef struct s_list {
     void *data;
     struct s_list *next;
 }
 t_list;
+
 t_list *mx_create_node(void *data);
 void mx_push_front(t_list **list, void *data);
 void mx_push_back(t_list **list, void *data);

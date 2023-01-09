@@ -14,7 +14,7 @@ static int file_len(const char *file) {
     return len;
 }
 
-int mx_error_line(char *file_text) {
+char *mx_error_line(char *file_text) {
     for (int i = 0; file_text[i] != '\0'; i++) {
         if (file_text[0] == '\n') {
             mx_printstr("error: line 1 is not valid\n");
@@ -39,8 +39,8 @@ char *mx_get_file_text(int argc, char const *argv[]) {
         exit(0);
     }
     int fl = open(argv[1], O_RDONLY);
-    int fil = 0;
     int size = 0;
+    int fil = 0;
     if (fl == -1) {
         close(fl);
         mx_printstr("error: file ");

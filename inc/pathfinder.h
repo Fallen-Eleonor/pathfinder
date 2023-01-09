@@ -5,8 +5,8 @@
 
 typedef struct s_pathfinder_main {
     char *file_text;
-    t_list **nodes;
-    t_list **names_vertices;
+    t_list *nodes;
+    t_list *names_vertices;
 } t_pathfinder_main;
 
 typedef struct s_graph_node {
@@ -14,10 +14,6 @@ typedef struct s_graph_node {
     char *first_vertex;
     char *second_vertex;
 } t_graph_node;
-
-typedef struct s_graph_vertex {
-    char *name_vertex;
-} t_graph_vertex;
 
 typedef struct s_part_path {
     char *name;
@@ -47,7 +43,7 @@ void mx_delete_from_path(t_part_path path[]);
 void mx_print_path(t_part_path path[], char *last_element_name, int total_distance);
 
 // Errors
-int mx_error_line(char *file_text); 
+char *mx_error_line(char *file_text); 
 void mx_error_invalid_number(int counted, char *file_text, t_pathfinder_main data);
 void mx_error_sum_of_bridges_lengths(long int sum, t_pathfinder_main data, char *str_line);
 void mx_error_duplicate_bridges(t_list *nodes, t_pathfinder_main data);
